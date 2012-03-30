@@ -1,0 +1,21 @@
+" hide the toolbar in gvim
+set guioptions-=T
+
+set guifont=Consolas:h10
+
+set lines=50 columns=150
+
+" number of space characters that will be inserted when the tab key is pressed
+set tabstop=2
+
+" number of space characters inserted for indentation
+set shiftwidth=2
+
+" backspace
+set bs=2
+
+set ruler
+
+set laststatus=2
+
+set nobackup
