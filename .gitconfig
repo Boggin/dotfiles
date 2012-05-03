@@ -17,11 +17,14 @@
 	mn = merge --no-commit
 	spull = !git-svn rebase
 	spush = !git-svn dcommit
+	tpull = '!git tfs fetch && git rebase tfs/default'
+	tpush = '!git tfs ct --build-default-comment'
 [core]
 	autocrlf = true
 	safecrlf = true
 	editor = gvim
 	whitespace = cr-at-eol
+	excludesfile = c:/Users/richard.bogle/.gitignore_global
 [color]
 	ui = true
 [merge]
