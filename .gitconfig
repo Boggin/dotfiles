@@ -1,37 +1,54 @@
-[alias]
-	ci = commit
-	cm = commit -m
-	cam = commit -am
-	co = checkout
-	df = diff
-	dfc = diff --cached
-	dft = diff --text
-	st = status
-	br = branch
-	lg = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	hist = log --graph --full-history --pretty="%x1b[31m%h%x20%x1b[32m%ar%x1b[0m%x20%s%x20%C(bold)%d%Creset%x20%x1b[33m(%an)%x1b[0m"
-	history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	ls = ls-files
-	mn = merge --no-commit
-	spull = !git-svn rebase
-	spush = !git-svn dcommit
-	tpull = '!git tfs fetch && git rebase tfs/default'
-	tpush = '!git tfs ct --build-default-comment'
 [core]
-	autocrlf = true
-	safecrlf = true
-	editor = gvim
-	whitespace = cr-at-eol
-	excludesfile = c:/Users/richard.bogle/.gitignore_global
+    autocrlf = false
+    safecrlf = true
+    editor = 'C:/Program Files/vim/vim73/gvim.exe' -f
+    whitespace = cr-at-eol
+    excludesfile = ~/.gitignore
+[alias]
+    ci = commit
+    cm = commit -m
+    cam = commit -am
+    co = checkout
+    df = diff
+    dfc = diff --cached
+    dft = diff --text
+    st = status -sb
+    br = branch
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    hist = log --graph --full-history --pretty="%x1b[31m%h%x20%x1b[32m%ar%x1b[0m%x20%s%x20%C(bold)%d%Creset%x20%x1b[33m(%an)%x1b[0m"
+    history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    ls = ls-files
+    mn = merge --no-commit
+    spull = !git-svn rebase
+    spush = !git-svn dcommit
+    tpull = '!git tfs fetch && git rebase tfs/default'
+    tpush = '!git tfs ct --build-default-comment'
 [color]
-	ui = true
+    ui = true
+[diff]
+    tool = p4merge
+    mnemonicprefix = true
+[difftool "p4merge"]
+    path = "C:/Program Files/Perforce/p4merge.exe"
+    cmd = "p4merge.exe $LOCAL $REMOTE"
+    prompt = false
 [merge]
     tool = p4merge
+    keepBackup = false
+    stat = true
 [mergetool "p4merge"]
     path = "C:/Program Files/Perforce/p4merge.exe"
     cmd = "p4merge.exe $BASE $LOCAL $REMOTE $MERGED"
     trustExitCode = true
-    keepBackup = false
-
+[http]
+    proxy = http://username:password@proxy_name:port_number
+[advice]
+    statusHints = false
+[branch]
+    autosetupmerge = true
+[push]
+    default = tracking
+[help]
+    format = html
