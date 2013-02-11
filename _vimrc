@@ -7,12 +7,13 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
-" My Bundles 
+" My Bundles
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'vim-scripts/vcscommand.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 
@@ -34,6 +35,9 @@ set expandtab|retab
 
 " no tabs
 set hidden
+
+" highlight search
+set hlsearch
 
 " stamp
 nnoremap S diw"0P
@@ -64,7 +68,74 @@ set autoread
 " http://arun.wordpress.com/tag/csharp/
 set tag=C:\mytagfile
 
+" cs folding
+" Folding : http://vim.wikia.com/wiki/Syntax-based_folding, see comment by Ostrygen
+au FileType cs set omnifunc=syntaxcomplete#Complete
+au FileType cs set foldmethod=marker
+au FileType cs set foldmarker={,}
+au FileType cs set foldtext=substitute(getline(v:foldstart),'{.*','{...}',)
+au FileType cs set foldlevelstart=2
+
 " temp directories
 set backupdir=C:\Temp\vim\
 set directory=C:\Temp\vim\
+
+" remove trailing whitespace
+autocmd FileType cs autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" highlight whitespace
+highlight ExtraWhitespace ctermbg=DarkYellow guibg=DarkYellow
+" match ExtraWhitespace /\s\+$/
+" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd BufWinLeave * call clearmatches()
+
+autocmd InsertEnter * syntax match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * syntax match ExtraWhitespace /\s\+$/
+
+"statusline setup
+set statusline =%#identifier#
+set statusline+=[%t]    "tail of the filename
+set statusline+=%*
+
+"display a warning if fileformat isnt unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+"display a warning if file encoding isnt utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+set statusline+=%h      "help file flag
+set statusline+=%y      "filetype
+
+"read only flag
+set statusline+=%#identifier#
+set statusline+=%r
+set statusline+=%*
+
+"modified flag
+set statusline+=%#identifier#
+set statusline+=%m
+set statusline+=%*
+
+set statusline+=%{fugitive#statusline()}
+
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
+
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+set laststatus=2
+
+set list
+set listchars=tab:¬·,trail:·,nbsp:·
+
 
