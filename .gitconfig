@@ -1,6 +1,6 @@
 [core]
     autocrlf = false
-    safecrlf = true
+    safecrlf = false
     editor = 'C:/Program Files/vim/vim73/gvim.exe' -f
     whitespace = cr-at-eol
     excludesfile = ~/.gitignore
@@ -44,6 +44,12 @@
     trustExitCode = true
 [http]
     proxy = http://username:password@proxy_name:port_number
+    #postBuffer = 524288000
+    #receivepack = true
+[https]
+    proxy = https://username:password@proxy_name:port_number
+    #postBuffer = 524288000
+    #receivepack = true
 [advice]
     statusHints = false
 [branch]
@@ -51,4 +57,10 @@
 [push]
     default = tracking
 [help]
-    format = html
+    format = web
+[web]
+    browser = chrome
+[browser "chrome"]
+    path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+[browser "firefox"]
+    path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
