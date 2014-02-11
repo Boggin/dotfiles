@@ -43,17 +43,18 @@
     cmd = "p4merge.exe $BASE $LOCAL $REMOTE $MERGED"
     trustExitCode = true
 [http]
-    proxy = http://username:password@proxy_name:port_number
+    proxy = http://127.0.0.1:3128
     #postBuffer = 524288000
     #receivepack = true
 [https]
-    proxy = https://username:password@proxy_name:port_number
+    proxy = https://127.0.0.1:3128
     #postBuffer = 524288000
     #receivepack = true
 [advice]
     statusHints = false
 [branch]
     autosetupmerge = true
+    autosetuprebase = always
 [push]
     default = tracking
 [help]
@@ -64,3 +65,6 @@
     path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 [browser "firefox"]
     path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+[rerere]
+	enabled = true
+	autoupdate = true
