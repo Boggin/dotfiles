@@ -1,7 +1,7 @@
 [core]
     autocrlf = false
     safecrlf = false
-    editor = 'C:/Program Files/vim/vim73/gvim.exe' -f
+    editor = 'C:/program files (x86)/vim/vim74/gvim.exe' -f
     whitespace = cr-at-eol
     excludesfile = ~/.gitignore
 [alias]
@@ -23,31 +23,31 @@
     mn = merge --no-commit
     spull = !git-svn rebase
     spush = !git-svn dcommit
-    tpull = '!git tfs fetch && git rebase tfs/default'
-    tpush = '!git tfs ct --build-default-comment'
+    tpull = "!git tfs fetch; git rebase tfs/default"
+    tpush = "!git tfs ct"
 [color]
     ui = true
 [diff]
-    tool = p4merge
+    tool = kdiff3
     mnemonicprefix = true
-[difftool "p4merge"]
-    path = "C:/Program Files/Perforce/p4merge.exe"
-    cmd = "p4merge.exe $LOCAL $REMOTE"
+[difftool "kdiff3"]
+    path = "C:/program files/kdiff3/kdiff3.exe"
+    cmd = "kdiff3.exe $LOCAL $REMOTE"
     prompt = false
 [merge]
-    tool = p4merge
+    tool = kdiff3
     keepBackup = false
     stat = true
-[mergetool "p4merge"]
-    path = "C:/Program Files/Perforce/p4merge.exe"
-    cmd = "p4merge.exe $BASE $LOCAL $REMOTE $MERGED"
+[mergetool "kdiff3"]
+    path = "C:/program files/kdiff3/kdiff3.exe"
+    cmd = "kdiff3.exe $BASE $LOCAL $REMOTE $MERGED"
     trustExitCode = true
 [http]
-    proxy = http://127.0.0.1:3128
+    #proxy = http://127.0.0.1:3128
     #postBuffer = 524288000
     #receivepack = true
 [https]
-    proxy = https://127.0.0.1:3128
+    #proxy = https://127.0.0.1:3128
     #postBuffer = 524288000
     #receivepack = true
 [advice]
@@ -62,9 +62,9 @@
 [web]
     browser = chrome
 [browser "chrome"]
-    path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+    path = "C:\\program files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 [browser "firefox"]
-    path = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
+    path = "C:\\program files (x86)\\Mozilla Firefox\\firefox.exe"
 [rerere]
 	enabled = true
 	autoupdate = true
