@@ -24,12 +24,13 @@
     spull = !git-svn rebase
     spush = !git-svn dcommit
     tpull = "!git tfs fetch; git rebase tfs/default"
-    tpush = "!git tfs ct"
+    tpush = !git tfs ct
 [color]
     ui = true
 [diff]
     tool = kdiff3
     mnemonicprefix = true
+    guitool = kdiff3
 [difftool "kdiff3"]
     path = "C:/program files/kdiff3/kdiff3.exe"
     cmd = "kdiff3.exe $LOCAL $REMOTE"
@@ -68,3 +69,5 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+[commit]
+	template = ~/.git-prepare-commit-msg
