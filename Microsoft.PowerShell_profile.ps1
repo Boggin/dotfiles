@@ -10,19 +10,18 @@ function global:prompt {
     Write-Host($env:USERNAME + " ") -ForegroundColor Green -nonewline
     Write-Host($env:COMPUTERNAME + " ") -ForegroundColor Magenta -nonewline
     # limit length of prompt
-    $m = 40
+    $m = 30
     $str = $pwd.ProviderPath
     if ($str.length -ge $m)
     {
         $str = "..." + $str.substring($str.length - $m)
     }
     Write-Host($str) -ForegroundColor Yellow -nonewline
-
-    # posh-git example
+    # posh-git
     $realLASTEXITCODE = $LASTEXITCODE
     Write-VcsStatus
     $global:LASTEXITCODE = $realLASTEXITCODE
-    Write-Host(" ")
+    Write-Host("")
     Write-Host("PS >") -ForegroundColor Gray -NoNewline
     " "
 }
