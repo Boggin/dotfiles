@@ -71,3 +71,7 @@
 	autoupdate = true
 [commit]
 	template = ~/.git-prepare-commit-msg
+[credential]
+	helper = manager
+[user]
+	name = "Richard Bogle"
