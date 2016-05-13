@@ -1,6 +1,6 @@
 Import-Module Pscx
-#Import-VisualStudioVars 140 -Architecture x86
-$Pscx:Preferences.TextEditor = 'notepad2.exe'
+Invoke-BatchFile "${env:VS140COMNTOOLS}\vsvars32.bat"
+$Pscx:Preferences.TextEditor = "${env:ProgramFiles(x86)}\Notepad++\notepad++.exe"
 if ($host.Name -eq 'ConsoleHost')
 {
 	Import-Module PSReadline
