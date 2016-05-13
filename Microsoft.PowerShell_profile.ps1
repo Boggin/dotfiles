@@ -1,5 +1,5 @@
 Import-Module Pscx
-Import-VisualStudioVars 140 -Architecture x86
+#Import-VisualStudioVars 140 -Architecture x86
 $Pscx:Preferences.TextEditor = 'notepad2.exe'
 if ($host.Name -eq 'ConsoleHost')
 {
@@ -11,18 +11,18 @@ function global:prompt {
     Write-Host($env:USERNAME + " ") -ForegroundColor Green -nonewline
     Write-Host($env:COMPUTERNAME + " ") -ForegroundColor Magenta -nonewline
     # limit length of prompt
-    $m = 30
+    $m = 47
     $str = $pwd.ProviderPath
     if ($str.length -ge $m)
     {
         $str = "..." + $str.substring($str.length - $m)
     }
-    Write-Host($str) -ForegroundColor Yellow -nonewline
+    Write-Host($str) -ForegroundColor Yellow
+    Write-Host("PS") -ForegroundColor Gray -NoNewline
     # posh-git
     $realLASTEXITCODE = $LASTEXITCODE
     Write-VcsStatus
     $global:LASTEXITCODE = $realLASTEXITCODE
-    Write-Host("")
-    Write-Host("PS >") -ForegroundColor Gray -NoNewline
+    Write-Host(" >") -ForegroundColor Gray -NoNewline
     " "
 }
