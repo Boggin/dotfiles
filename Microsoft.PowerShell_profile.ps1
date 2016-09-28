@@ -5,24 +5,8 @@ if ($host.Name -eq 'ConsoleHost')
 {
 	Import-Module PSReadline
 }
-Import-Module posh-git
-# Set up a simple prompt, adding the git prompt parts inside git repos
-function global:prompt {
-    Write-Host($env:USERNAME + " ") -ForegroundColor Green -nonewline
-    Write-Host($env:COMPUTERNAME + " ") -ForegroundColor Magenta -nonewline
-    # limit length of prompt
-    $m = 47
-    $str = $pwd.ProviderPath
-    if ($str.length -ge $m)
-    {
-        $str = "..." + $str.substring($str.length - $m)
-    }
-    Write-Host($str) -ForegroundColor Yellow
-    Write-Host("PS") -ForegroundColor Gray -NoNewline
-    # posh-git
-    $realLASTEXITCODE = $LASTEXITCODE
-    Write-VcsStatus
-    $global:LASTEXITCODE = $realLASTEXITCODE
-    Write-Host(" >") -ForegroundColor Gray -NoNewline
-    " "
-}
+Set-Alias -Name ls -Value PowerLS -Option AllScope
+#try { $null = gcm pshazz -ea stop; pshazz init } catch { }
+# Import oh-my-posh and dependecies
+Import-Module -Name posh-git -ErrorAction SilentlyContinue
+Import-Module oh-my-posh
