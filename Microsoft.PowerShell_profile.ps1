@@ -10,3 +10,5 @@ Set-Alias -Name ls -Value PowerLS -Option AllScope
 # Import oh-my-posh and dependecies
 Import-Module -Name posh-git -ErrorAction SilentlyContinue
 Import-Module oh-my-posh
+Import-Module posh-docker
+Set-Theme Sorin
