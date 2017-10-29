@@ -1,9 +1,9 @@
 [core]
-    autocrlf = false
+    autocrlf = true
     safecrlf = false
-    editor = 'C:/program files (x86)/vim/vim74/gvim.exe' -f
     whitespace = cr-at-eol
     excludesfile = ~/.gitignore
+    editor = vim
 [alias]
     ci = commit
     cm = commit -m
@@ -32,17 +32,21 @@
     mnemonicprefix = true
     guitool = kdiff3
 [difftool "kdiff3"]
-    path = "C:/program files/kdiff3/kdiff3.exe"
-    cmd = "kdiff3.exe $LOCAL $REMOTE"
+    path = "C:/program files/kdiff3/"
+    cmd = "kdiff3.exe" "$LOCAL" "$REMOTE"
     prompt = false
 [merge]
-    tool = kdiff3
+    tool = meld
+    prompt = false
     keepBackup = false
+    keepTemporaries = false
     stat = true
 [mergetool "kdiff3"]
-    path = "C:/program files/kdiff3/kdiff3.exe"
-    cmd = "kdiff3.exe $BASE $LOCAL $REMOTE $MERGED"
+    path = "C:/program files/kdiff3/"
+    cmd = "kdiff3.exe" "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = true
+[mergetool "meld"]
+    path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
 [http]
     #proxy = http://127.0.0.1:3128
     #postBuffer = 524288000
@@ -58,6 +62,7 @@
     autosetuprebase = always
 [push]
     default = tracking
+	followTags = true
 [help]
     format = web
 [web]
@@ -67,11 +72,12 @@
 [browser "firefox"]
     path = "C:\\program files (x86)\\Mozilla Firefox\\firefox.exe"
 [rerere]
-	enabled = true
-	autoupdate = true
+    enabled = true
+    autoupdate = true
 [commit]
-	template = ~/.git-prepare-commit-msg
+    template = ~/.git-prepare-commit-msg
 [credential]
-	helper = manager
+    helper = manager
 [user]
-	name = "Richard Bogle"
+    name = "Richard Bogle"
+	email = richard.bogle@unsettling.co.uk

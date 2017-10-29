@@ -9,7 +9,7 @@
 # Example: Github issue #23
 
 # TFS gated checkin bypass
-git-tfs-force: rcheckin
+#git-tfs-force: rcheckin
 
 # --- COMMIT END ---
 # Type can be 
