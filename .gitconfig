@@ -28,9 +28,11 @@
 [color]
     ui = true
 [diff]
-    tool = kdiff3
+    tool = meld
     mnemonicprefix = true
-    guitool = kdiff3
+    guitool = meld
+[difftool "meld"]
+    path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
 [difftool "kdiff3"]
     path = "C:/program files/kdiff3/"
     cmd = "kdiff3.exe" "$LOCAL" "$REMOTE"
@@ -62,7 +64,7 @@
     autosetuprebase = always
 [push]
     default = tracking
-	followTags = true
+    followTags = true
 [help]
     format = web
 [web]
@@ -80,4 +82,4 @@
     helper = manager
 [user]
     name = "Richard Bogle"
-	email = richard.bogle@unsettling.co.uk
+    email = richard.bogle@unsettling.co.uk
