@@ -37,6 +37,11 @@
     path = "C:/program files/kdiff3/"
     cmd = "kdiff3.exe" "$LOCAL" "$REMOTE"
     prompt = false
+[difftool "TortoiseMerge"]
+    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
+[difftool "tmerge"]
+    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
+    cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
     tool = meld
     prompt = false
@@ -49,6 +54,9 @@
     trustExitCode = true
 [mergetool "meld"]
     path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
+[mergetool "TortoiseMerge"]
+    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
+    cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" -base:\"$BASE\" -mine:\"$LOCAL\" -theirs:\"$REMOTE\" -merged:\"$MERGED\"
 [http]
     #proxy = http://127.0.0.1:3128
     #postBuffer = 524288000
@@ -83,3 +91,5 @@
 [user]
     name = "Richard Bogle"
     email = richard.bogle@unsettling.co.uk
+[remote "origin"]
+	prune = true
