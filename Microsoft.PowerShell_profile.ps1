@@ -1,25 +1,12 @@
-$env:PSModulePath = "$env:PSModulePath;C:\Windows\system32\WindowsPowerShell\v1.0\Modules\;"
-# Invoke-BatchFile "${env:VS140COMNTOOLS}\vsvars32.bat"
-# Import-Module Pscx
-$Pscx:Preferences.TextEditor = "${env:ProgramFiles(x86)}\Notepad++\notepad++.exe"
-if ($host.Name -eq 'ConsoleHost')
-{
-	Import-Module PSReadline
-}
-Set-Alias -Name ls -Value PowerLS -Option AllScope
-Set-Alias -Name git -Value hub -Option AllScope
-#try { $null = gcm pshazz -ea stop; pshazz init } catch { }
-# Import oh-my-posh and dependecies
-Import-Module -Name posh-git -ErrorAction SilentlyContinue
+Import-Module PSReadline
+Import-Module posh-git
 Import-Module oh-my-posh
-Import-Module posh-docker
+Import-Module DockerCompletion
 Import-Module z
-Set-Theme Sorin
+Set-Theme tehrob
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
-
-Set-Alias git hub
