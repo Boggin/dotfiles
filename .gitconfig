@@ -28,9 +28,11 @@
 [color]
     ui = true
 [diff]
-    tool = meld
+    tool = diffmerge
     mnemonicprefix = true
     guitool = meld
+[difftool "diffmerge"]
+    path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe"
 [difftool "meld"]
     path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
 [difftool "kdiff3"]
@@ -43,7 +45,7 @@
     path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
     cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
-    tool = meld
+    tool = diffmerge
     prompt = false
     keepBackup = false
     keepTemporaries = false
@@ -52,6 +54,8 @@
     path = "C:/program files/kdiff3/"
     cmd = "kdiff3.exe" "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
     trustExitCode = true
+[mergetool "diffmerge"]
+    path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe"
 [mergetool "meld"]
     path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
 [mergetool "TortoiseMerge"]
@@ -76,11 +80,13 @@
 [help]
     format = web
 [web]
-    browser = chrome
+    browser = edge
 [browser "chrome"]
     path = "C:\\program files (x86)\\Google\\Chrome\\Application\\chrome.exe"
 [browser "firefox"]
     path = "C:\\program files (x86)\\Mozilla Firefox\\firefox.exe"
+[browser "edge"]
+    path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
 [rerere]
     enabled = true
     autoupdate = true
@@ -88,8 +94,11 @@
     template = ~/.git-prepare-commit-msg
 [credential]
     helper = manager
+    helper = C:/Users/richard533/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe
+[remote "origin"]
+    prune = true
+[credential "https://dev.azure.com"]
+    useHttpPath = true
 [user]
     name = "Richard Bogle"
     email = richard.bogle@unsettling.co.uk
-[remote "origin"]
-	prune = true
