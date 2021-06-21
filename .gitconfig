@@ -15,8 +15,8 @@
     st = status -sb
     br = branch
     lg = log -p
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lol = log --graph --decorate --oneline
+    lola = log --graph --decorate --oneline --all
     hist = log --graph --full-history --pretty="%x1b[31m%h%x20%x1b[32m%ar%x1b[0m%x20%s%x20%C(bold)%d%Creset%x20%x1b[33m(%an)%x1b[0m"
     history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     ls = ls-files
