@@ -1,12 +1,11 @@
-Import-Module PSReadline
 Import-Module posh-git
 Import-Module oh-my-posh
-Import-Module DockerCompletion
 Import-Module z
-Set-Theme tehrob
+Import-Module -Name Terminal-Icons
+Set-PoshPrompt -Theme powerlevel10k_classic
 
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
+# Function to relaunch as Admin:
+  function Relaunch-Admin { Start-Process -Verb RunAs (Get-Process -Id $PID).Path }
+
+# Alias for the function:
+  Set-Alias psadmin Relaunch-Admin
