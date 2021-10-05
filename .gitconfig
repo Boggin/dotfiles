@@ -1,9 +1,9 @@
-[core]
+[[core]
     autocrlf = true
     safecrlf = false
     whitespace = cr-at-eol
     excludesfile = ~/.gitignore
-    editor = vim
+    editor = nvim
 [alias]
     ci = commit
     cm = commit -m
@@ -21,54 +21,23 @@
     history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     ls = ls-files
     mn = merge --no-commit
-    spull = !git-svn rebase
-    spush = !git-svn dcommit
-    tpull = "!git tfs fetch; git rebase tfs/default"
-    tpush = !git tfs ct
 [color]
     ui = true
 [diff]
-    tool = diffmerge
+    tool = meld
     mnemonicprefix = true
     guitool = meld
-[difftool "diffmerge"]
-    path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe"
 [difftool "meld"]
     path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
-[difftool "kdiff3"]
-    path = "C:/program files/kdiff3/"
-    cmd = "kdiff3.exe" "$LOCAL" "$REMOTE"
-    prompt = false
-[difftool "TortoiseMerge"]
-    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
-[difftool "tmerge"]
-    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
-    cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" \"$LOCAL\" \"$REMOTE\"
 [merge]
-    tool = diffmerge
+    tool = meld
     prompt = false
     keepBackup = false
     keepTemporaries = false
     stat = true
-[mergetool "kdiff3"]
-    path = "C:/program files/kdiff3/"
-    cmd = "kdiff3.exe" "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-    trustExitCode = true
-[mergetool "diffmerge"]
-    path = "C:\\Program Files\\SourceGear\\Common\\DiffMerge\\sgdm.exe"
 [mergetool "meld"]
     path = "C:\\Program Files (x86)\\Meld\\Meld.exe"
-[mergetool "TortoiseMerge"]
-    path = C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe
-    cmd = \"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe\" -base:\"$BASE\" -mine:\"$LOCAL\" -theirs:\"$REMOTE\" -merged:\"$MERGED\"
-[http]
-    #proxy = http://127.0.0.1:3128
-    #postBuffer = 524288000
-    #receivepack = true
-[https]
-    #proxy = https://127.0.0.1:3128
-    #postBuffer = 524288000
-    #receivepack = true
+    trustExitCode = true
 [advice]
     statusHints = false
 [branch]
@@ -80,25 +49,20 @@
 [help]
     format = web
 [web]
-    browser = edge
+    browser = chrome
 [browser "chrome"]
-    path = "C:\\program files (x86)\\Google\\Chrome\\Application\\chrome.exe"
-[browser "firefox"]
-    path = "C:\\program files (x86)\\Mozilla Firefox\\firefox.exe"
-[browser "edge"]
-    path = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+    path = "C:\\program files\\Google\\Chrome\\Application\\chrome.exe"
 [rerere]
     enabled = true
     autoupdate = true
 [commit]
     template = ~/.git-prepare-commit-msg
+    gpgsign = true
 [credential]
     helper = manager
-    helper = C:/Users/richard533/AppData/Local/Programs/Git\\ Credential\\ Manager\\ Core/git-credential-manager-core.exe
-[remote "origin"]
-    prune = true
-[credential "https://dev.azure.com"]
-    useHttpPath = true
 [user]
-    name = "Richard Bogle"
+    name = Richard Bogle
     email = richard.bogle@unsettling.co.uk
+    signingkey = FFBF8D3EEB133EED
+[gpg]
+    program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
