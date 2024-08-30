@@ -1,9 +1,10 @@
-[[core]
+[core]
     autocrlf = true
     safecrlf = false
     whitespace = cr-at-eol
     excludesfile = ~/.gitignore
     editor = nvim
+#    sshCommand = "C:\\Windows\\System32\\OpenSSH\\ssh.exe"
 [alias]
     ci = commit
     cm = commit -m
@@ -21,6 +22,7 @@
     history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     ls = ls-files
     mn = merge --no-commit
+    sw = switch
 [color]
     ui = true
 [diff]
@@ -60,6 +62,8 @@
     gpgsign = true
 [credential]
     helper = manager
+        helper =
+        helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
 [user]
     name = Richard Bogle
     email = richard.bogle@unsettling.co.uk
