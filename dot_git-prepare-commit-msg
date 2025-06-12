@@ -1,0 +1,38 @@
+# <type>[(optional scope)]: <subject>
+# |<----  Using a Maximum Of 50 Characters  ---->|
+
+
+# Explain why this change is being made.
+# |<----  Try To Limit Each Line to a Maximum Of 72 Characters    ---->|
+
+# Provide links or keys to any relevant tickets, articles or other resources,
+# |<----  use git-interpret-trailers, for example ---->|
+# Issue #23
+# Product-Backlog-Item: 109059
+
+# --- COMMIT END ---
+# Type may be 
+#    feature  (new feature)
+#    fix      (bug fix)
+#    refactor (refactoring production code)
+#    style    (formatting, missing semi-colons, etc; no code change)
+#    docs     (changes to documentation)
+#    test     (adding or refactoring tests; no production code change)
+#    chore    (updating build tasks etc; no production code change)
+#    revert   (add the commit SHAs that were reverted)
+#    !        (append to <type> for breaking change)
+# --------------------
+# Remember to
+#    Capitalize the subject line.
+#    Use the imperative mood in the subject line.
+#    Do not end the subject line with a period.
+#    Separate subject from body with a blank line.
+#    Use the body to explain what and why vs. how.
+#    Can use multiple lines with "-" for bullet points in body.
+#    Use the types to drive Semantic Versioning.
+# --------------------
+# Conventional Commits: https://www.conventionalcommits.org/en/v1.0.0/
+# Keep a Changelog: https://keepachangelog.com/en/1.1.0/
+#
+# For more information about this template, check out:
+# https://gist.github.com/Boggin/081e152f602884799884226e0ea44f51
