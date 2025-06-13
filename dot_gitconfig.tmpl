@@ -30,7 +30,11 @@
     mnemonicprefix = true
     guitool = meld
 [difftool "meld"]
+{{- if eq .chezmoi.os "windows" }}
     path = "C:\\Program Files\\Meld\\Meld.exe"
+{{- else }}
+    path = "meld"
+{{- end }}
 [merge]
     tool = meld
     prompt = false
@@ -38,7 +42,11 @@
     keepTemporaries = false
     stat = true
 [mergetool "meld"]
+{{- if eq .chezmoi.os "windows" }}
     path = "C:\\Program Files\\Meld\\Meld.exe"
+{{- else }}
+    path = "meld"
+{{- end }}
     trustExitCode = true
 [advice]
     statusHints = false
@@ -48,13 +56,17 @@
 [push]
     default = tracking
     followTags = true
-	autoSetupRemote = true
+    autoSetupRemote = true
 [help]
     format = web
 [web]
     browser = chrome
 [browser "chrome"]
+{{- if eq .chezmoi.os "windows" }}
     path = "C:\\program files\\Google\\Chrome\\Application\\chrome.exe"
+{{- else }}
+    path = "chrome"
+{{- end }}
 [rerere]
     enabled = true
     autoupdate = true
@@ -62,11 +74,18 @@
     template = ~/.git-prepare-commit-msg
 #    gpgsign = true
 [credential]
+{{- if eq .chezmoi.os "windows" }}
+    helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{- else }}
     helper = manager
-	helper = C:/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+{{- end }}
 [user]
     name = Richard Bogle
     email = richard.bogle@unsettling.co.uk
     signingkey = FFBF8D3EEB133EED
 [gpg]
+{{- if eq .chezmoi.os "windows" }}
     program = "C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe"
+{{- else }}
+    program = gpg
+{{- end }}
